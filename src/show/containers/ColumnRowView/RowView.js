@@ -13,8 +13,4 @@ RowView.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
 };
 
-RowView.defaultProps = {
-  children: null
-};
-
 export default RowView;

@@ -2,24 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Animated, ScrollView } from 'react-native';
 
-import { shadows } from 'Theme';
-
 const ColumnRowView = ({
-  alignItems,
-  animated,
-  animatedStyle,
+  alignItems = 'center',
+  animated = false,
+  animatedStyle = null,
   backgroundColor,
   borderColor,
-  borderRadius,
-  borderWidth,
-  children,
-  flex,
-  flexDirection,
-  flexGrow,
-  flexWrap,
-  gap,
-  height,
-  justifyContent,
+  borderRadius = 0,
+  borderWidth = 0,
+  children = null,
+  flex = 0,
+  flexDirection = 'column',
+  flexWrap = 'nowrap',
+  gap = 0,
+  height = null,
+  justifyContent = 'center',
   marginBottom,
   marginHorizontal,
   marginLeft,
@@ -27,8 +24,7 @@ const ColumnRowView = ({
   marginTop,
   marginVertical,
   maxHeight,
-  minHeight,
-  onLayout,
+  minHeight = 0,
   overflow,
   paddingBottom,
   paddingHorizontal,
@@ -36,10 +32,8 @@ const ColumnRowView = ({
   paddingRight,
   paddingTop,
   paddingVertical,
-  scrollable,
-  shadow,
-  shadowStyle,
-  width,
+  scrollable = false,
+  width = '100%',
   zIndex
 }) => {
   const composedStyles = {
@@ -47,31 +41,29 @@ const ColumnRowView = ({
   };
 
   const composeScrollableStyles = {
-    alignItems: alignItems,
-    borderColor: borderColor,
-    borderRadius: borderRadius,
-    borderWidth: borderWidth,
-    justifyContent: justifyContent,
-    flex: flex,
-    flexDirection: flexDirection,
-    flexGrow: flexGrow,
-    flexWrap: flexWrap,
-    width: width,
-    height: height,
-    gap: gap,
+    alignItems,
+    borderColor,
+    borderRadius,
+    borderWidth,
+    justifyContent,
+    flex,
+    flexDirection,
+    flexWrap,
+    width,
+    height,
+    gap,
     marginBottom: marginBottom || marginVertical || 0,
     marginLeft: marginLeft || marginHorizontal || 0,
     marginRight: marginRight || marginHorizontal || 0,
     marginTop: marginTop || marginVertical || 0,
-    maxHeight: maxHeight,
-    minHeight: minHeight,
-    overflow: overflow,
+    maxHeight,
+    minHeight,
+    overflow,
     paddingBottom: paddingBottom || paddingVertical || 0,
     paddingLeft: paddingLeft || paddingHorizontal || 0,
     paddingRight: paddingRight || paddingHorizontal || 0,
     paddingTop: paddingTop || paddingVertical || 0,
-    zIndex: zIndex,
-    ...(shadow && shadowStyle)
+    zIndex,
   };
 
   const CRWiewComponent = animated
@@ -91,7 +83,7 @@ const ColumnRowView = ({
         animated && { ...animatedStyle }
       ]}
       contentContainerStyle={composeScrollableStyles}
-      onLayout={onLayout}>
+      >
       {children}
     </CRWiewComponent>
   );
@@ -108,7 +100,6 @@ ColumnRowView.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   flex: PropTypes.number,
   flexDirection: PropTypes.string,
-  flexGrow: PropTypes.number,
   flexWrap: PropTypes.string,
   gap: PropTypes.number,
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
@@ -121,7 +112,6 @@ ColumnRowView.propTypes = {
   marginVertical: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   maxHeight: PropTypes.number,
   minHeight: PropTypes.number,
-  onLayout: PropTypes.func,
   overflow: PropTypes.string,
   paddingBottom: PropTypes.number,
   paddingHorizontal: PropTypes.number,
@@ -130,46 +120,8 @@ ColumnRowView.propTypes = {
   paddingTop: PropTypes.number,
   paddingVertical: PropTypes.number,
   scrollable: PropTypes.bool,
-  shadow: PropTypes.bool,
-  shadowStyle: PropTypes.object,
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   zIndex: PropTypes.number
-};
-
-ColumnRowView.defaultProps = {
-  alignItems: 'center',
-  animated: false,
-  animatedStyle: null,
-  borderColor: undefined,
-  borderRadius: 0,
-  borderWidth: 0,
-  children: null,
-  flex: 0,
-  flexDirection: 'column',
-  flexWrap: 'nowrap',
-  gap: 0,
-  height: null,
-  justifyContent: 'center',
-  marginBottom: undefined,
-  marginHorizontal: undefined,
-  marginLeft: undefined,
-  marginRight: undefined,
-  marginTop: undefined,
-  marginVertical: undefined,
-  maxHeight: undefined,
-  minHeight: 0,
-  overflow: undefined,
-  paddingBottom: undefined,
-  paddingHorizontal: undefined,
-  paddingLeft: undefined,
-  paddingRight: undefined,
-  paddingTop: undefined,
-  paddingVertical: undefined,
-  scrollable: false,
-  shadow: false,
-  shadowStyle: shadows.onlyTop,
-  width: '100%',
-  zIndex: undefined
 };
 
 export default ColumnRowView;

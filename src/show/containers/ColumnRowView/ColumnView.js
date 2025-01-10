@@ -13,8 +13,4 @@ ColumnView.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
 };
 
-ColumnView.defaultProps = {
-  children: null
-};
-
 export default ColumnView;
