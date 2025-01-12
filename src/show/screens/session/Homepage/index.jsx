@@ -4,7 +4,13 @@ import {ColumnView, RowView} from 'Containers';
 import {sizes} from 'Theme';
 
 import styles from './style';
-import {Header, SearchInput, Separator, QuickActions} from 'Components';
+import {
+  Header,
+  InfoCards,
+  SearchInput,
+  Separator,
+  QuickActions,
+} from 'Components';
 
 const HomePage = () => {
   return (
@@ -18,6 +24,7 @@ const HomePage = () => {
         <SearchInput />
         <QuickActions />
         <Separator />
+        <InfoCards />
         <Header />
         <Header />
         <Header />
