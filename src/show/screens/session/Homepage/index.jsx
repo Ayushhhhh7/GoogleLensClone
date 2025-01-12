@@ -1,22 +1,22 @@
-import {View, SafeAreaView, Text, Pressable} from 'react-native';
+import {SafeAreaView, ScrollView, Text} from 'react-native';
 import React from 'react';
 import {ColumnView, RowView} from 'Containers';
-import {CustomIcon} from 'Components';
 import {sizes} from 'Theme';
 
 import styles from './style';
-import Header from '../../../components/Header';
+import {Header, SearchInput, QuickActions} from 'Components';
 
 const HomePage = () => {
-
   return (
     <SafeAreaView style={styles.container}>
-      <ColumnView>
+      <ScrollView>
         <Header />
         <RowView paddingVertical={sizes.padding * 4}>
           <Text style={styles.googleTitle}>Google</Text>
         </RowView>
-      </ColumnView>
+        <SearchInput />
+        <QuickActions />
+      </ScrollView>
     </SafeAreaView>
   );
 };

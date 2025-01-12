@@ -4,7 +4,7 @@ export default {
       xs: 4,
       sm: 8,
       md: 16,
-      lg: 24,
+      lg: 22,
       xl: 32,
     },
     height: 32,
