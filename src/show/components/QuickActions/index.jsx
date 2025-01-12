@@ -1,8 +1,9 @@
 import React from 'react';
 import {ScrollView, TouchableOpacity} from 'react-native';
+
+import {sizes} from 'Theme';
 import {RowView} from 'Containers';
 import {CustomIcon} from 'Components';
-import {sizes} from 'Theme';
 
 import styles from './styles';
 
@@ -10,27 +11,28 @@ const quickActions = [
   {
     icon: 'image-search',
     label: 'Search',
-    color: '#BBA247',
-    bgColor: '#3E3A2F', // Darker shade of gold
+    color: '#e4c34d',
+    bgColor: '#3E3A2F',
   },
   {
     icon: 'translate',
     label: 'Translate',
     color: '#4B88E5',
-    bgColor: '#2F3543', // Darker shade of blue
-  },
-  {
-    icon: 'music-note',
-    label: 'Music',
-    color: '#8E4B4B',
-    bgColor: '#3E2F2F', // Darker shade of red
+    bgColor: '#2F3543', 
   },
   {
     icon: 'school',
     label: 'Education',
     color: '#3E7D67',
-    bgColor: '#2F3D37', // Darker shade of green
+    bgColor: '#2F3D37', 
   },
+  {
+    icon: 'music-note',
+    label: 'Music',
+    color: '#8E4B4B',
+    bgColor: '#3E2F2F', 
+  },
+
 ];
 
 const QuickActions = () => {

@@ -11,7 +11,7 @@ export default styles = StyleSheet.create({
   button: {
     backgroundColor: '#2e3133',
     borderRadius: sizes.borderRadius * 8,
-    paddingVertical: sizes.padding *2,
+    paddingVertical: sizes.padding *1.5,
     marginHorizontal: sizes.margin,
     elevation: 2,
     shadowColor: '#000',
