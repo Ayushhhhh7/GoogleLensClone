@@ -5,7 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {sizes} from 'Theme';
 import {CustomIcon} from 'Components';
-import {Login, HomePage, History, Notifications, More} from 'Screens';
+import {Login, HomePage, History, Notifications, More,Search} from 'Screens';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -32,16 +32,6 @@ const tabScreens = [
     icon: 'more',
   },
 ];
-
-const activeIconStyle = {
-  backgroundColor: '#5a6c8a',
-  borderRadius: 40,
-  height: 36,
-  justifyContent: 'center',
-  alignItems: 'center',
-  paddingLeft: sizes.padding * 1.5,
-  paddingTop: sizes.padding / 2,
-};
 
 const BottomTabs = () => {
   return (
@@ -92,11 +82,23 @@ const BottomTabs = () => {
   );
 };
 
+const activeIconStyle = {
+  backgroundColor: '#5a6c8a',
+  borderRadius: 40,
+  height: 36,
+  justifyContent: 'center',
+  alignItems: 'center',
+  paddingLeft: sizes.padding * 1.5,
+  paddingTop: sizes.padding / 2,
+};
+
+
 const Navigator = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="MainApp" component={BottomTabs} />
+      <Stack.Screen name="Search" component={Search} />
     </Stack.Navigator>
   );
 };

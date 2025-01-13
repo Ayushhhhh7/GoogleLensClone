@@ -1,5 +1,6 @@
 import React, {createRef} from 'react';
-import {View, TextInput} from 'react-native';
+import {View, TextInput, Pressable} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import {sizes} from 'Theme';
 import {RowView} from 'Containers';
@@ -9,7 +10,12 @@ import styles from './styles';
 
 const searchInputRef = createRef();
 
-const SearchInput = () => {
+const SearchInput = props => {
+  const navigation = useNavigation();
+  const {
+    leftIcon = 'search',
+    leftIconOnPress = () => navigation.navigate('Search'),
+  } = props;
   return (
     <View style={styles.container}>
       <RowView
@@ -17,24 +23,33 @@ const SearchInput = () => {
         backgroundColor="#2e3133"
         borderRadius={sizes.borderRadius * 7}
         paddingHorizontal={sizes.padding * 4}
-        paddingVertical={sizes.padding * 3}>
+        paddingVertical={
+          leftIcon == 'search' ? sizes.padding * 3 : sizes.padding
+        }>
         <CustomIcon
           pointer={false}
-          onPress={()=>searchInputRef.current.focus()}
-          icon="search"
+          onPress={leftIconOnPress}
+          icon={leftIcon}
           size={sizes.icon['lg'].size}
           iconColor="#9AA0A6"
         />
-
-        <TextInput
-          ref={searchInputRef}
-          placeholder="Search"
-          placeholderTextColor="#9AA0A6"
-          style={styles.input}
-        />
+        <Pressable onPress={() => navigation.navigate('Search')} width="60%">
+          <TextInput
+            {...(leftIcon == 'search' ? {pointerEvents: 'none'} : {})}
+            editable={leftIcon == 'search' ? false : true}
+            ref={searchInputRef}
+            placeholder="Search"
+            placeholderTextColor="#9AA0A6"
+            style={styles.input}
+          />
+        </Pressable>
 
         <RowView width="auto" gap={sizes.padding * 2}>
-          <CustomIcon onPress={()=>console.log("Mic")} icon="mic" size={sizes.icon['lg'].size} />
+          <CustomIcon
+            onPress={() => console.log('Mic')}
+            icon="mic"
+            size={sizes.icon['lg'].size}
+          />
           <CustomIcon icon="add-photo" size={sizes.icon['lg'].size} />
         </RowView>
       </RowView>

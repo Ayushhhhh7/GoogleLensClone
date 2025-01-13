@@ -2,6 +2,7 @@ import Mic from './mic';
 import Home from './home';
 import Moon from './moon';
 import More from './more';
+import Back from './back';
 import Close from './close';
 import Share from './share';
 import Heart from './heart';
@@ -23,6 +24,7 @@ import Notifications from './notifications';
 
 export {
   AddPhoto,
+  Back,
   Close,
   DropDown,
   Flask,
