@@ -6,8 +6,6 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 import Navigator from './navigator';
 
-import HomePage from './screens/session/Homepage';
-
 const AppRootView = () => {
   return (
     <SafeAreaProvider>
