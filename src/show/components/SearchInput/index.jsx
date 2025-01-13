@@ -15,7 +15,10 @@ const SearchInput = props => {
   const {
     leftIcon = 'search',
     leftIconOnPress = () => navigation.navigate('Search'),
+    value,
+    onChangeText,
   } = props;
+
   return (
     <View style={styles.container}>
       <RowView
@@ -33,7 +36,14 @@ const SearchInput = props => {
           size={sizes.icon['lg'].size}
           iconColor="#9AA0A6"
         />
-        <Pressable onPress={() => navigation.navigate('Search')} width="60%">
+        <Pressable
+          onPress={leftIcon == 'search' ? leftIconOnPress : () => {}}
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'flex-start',
+            marginBottom: sizes.margin,
+          }}>
           <TextInput
             {...(leftIcon == 'search' ? {pointerEvents: 'none'} : {})}
             editable={leftIcon == 'search' ? false : true}
@@ -41,6 +51,8 @@ const SearchInput = props => {
             placeholder="Search"
             placeholderTextColor="#9AA0A6"
             style={styles.input}
+            value={value}
+            onChangeText={onChangeText}
           />
         </Pressable>
 
