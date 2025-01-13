@@ -21,14 +21,16 @@ export default StyleSheet.create({
   },
   modalOverlay: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: 'rgba(0,0,0,0.8)',
   },
   modalPressable: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 80,
   },
   modalImage: {
     borderRadius: 8,
+    resizeMode: 'contain',
   },
 });
