@@ -25,6 +25,10 @@ const HomePage = () => {
         <QuickActions />
         <Separator />
         <InfoCards />
+        {/* <Header />
+        <Header />
+        <Header /> */}
+        {/* <Header />
         <Header />
         <Header />
         <Header />
@@ -37,11 +41,7 @@ const HomePage = () => {
         <Header />
         <Header />
         <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
+        <Header /> */}
       </ScrollView>
     </SafeAreaView>
   );

@@ -6,7 +6,7 @@ const School = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     width={24}
     height={24}
-    fill="#45be94"
+    fill="#c1e3d7"
     viewBox="0 -960 960 960"
     {...props}
   >
