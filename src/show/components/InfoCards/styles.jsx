@@ -14,7 +14,7 @@ export default styles = StyleSheet.create({
     borderRadius: sizes.borderRadius * 4,
     paddingLeft: sizes.padding * 3,
     paddingVertical: sizes.padding,
-    width: 180,
+    width: 150,
     justifyContent: 'space-around',
   },
   title: {

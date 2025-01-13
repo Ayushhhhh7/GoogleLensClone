@@ -5,17 +5,18 @@ import {sizes} from 'Theme';
 
 import styles from './style';
 import {
+  Feed,
   Header,
   InfoCards,
+  QuickActions,
   SearchInput,
   Separator,
-  QuickActions,
 } from 'Components';
 
 const HomePage = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView scrollEventThrottle={16}>
         <Header />
 
         <RowView paddingVertical={sizes.padding * 4}>
@@ -25,7 +26,7 @@ const HomePage = () => {
         <QuickActions />
         <Separator />
         <InfoCards />
-
+        <Feed />
       </ScrollView>
     </SafeAreaView>
   );
