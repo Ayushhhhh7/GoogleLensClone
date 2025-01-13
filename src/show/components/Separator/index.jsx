@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { sizes } from 'Theme';
 
 const Separator = ({
-  color = '#282a2e',
+  color = '#2e3133',
   paddingHorizontal,
   marginVertical,
 }) => {

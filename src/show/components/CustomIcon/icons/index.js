@@ -2,6 +2,7 @@ import Mic from './mic';
 import Home from './home';
 import Moon from './moon';
 import More from './more';
+import Close from './close';
 import Share from './share';
 import Heart from './heart';
 import Waves from './waves';
@@ -9,6 +10,7 @@ import Flask from './flask';
 import Search from './search';
 import School from './school';
 import History from './history';
+import DropDown from './drop-down';
 import MoreVert from './more-vert';
 import Settings from './settings';
 import AddPhoto from './add-photo';
@@ -21,6 +23,8 @@ import Notifications from './notifications';
 
 export {
   AddPhoto,
+  Close,
+  DropDown,
   Flask,
   GeminiLogo,
   GoogleLogo,

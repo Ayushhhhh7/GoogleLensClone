@@ -29,7 +29,7 @@ const Feed = () => {
               <Text style={styles.sourceTime}>Youtube · 23h</Text>
             </ColumnView>
           </RowView>
-          <RowView width="auto" gap={sizes.spacing.sm}>
+          <RowView width="auto" gap={sizes.spacing.sm / 2}>
             <CustomIcon icon={'heart'} size={sizes.icon.sm.size} />
             <CustomIcon icon={'share'} size={sizes.icon.sm.size} />
             <CustomIcon icon={'more-vert'} size={sizes.icon.sm.size} />
@@ -58,7 +58,7 @@ const Feed = () => {
               <Text style={styles.sourceTime}>Youtube · 18h</Text>
             </ColumnView>
           </RowView>
-          <RowView width="auto" gap={sizes.spacing.sm}>
+          <RowView width="auto" gap={sizes.spacing.sm / 2}>
             <CustomIcon icon={'heart'} size={sizes.icon.sm.size} />
             <CustomIcon icon={'share'} size={sizes.icon.sm.size} />
             <CustomIcon icon={'more-vert'} size={sizes.icon.sm.size} />
@@ -74,7 +74,7 @@ const Feed = () => {
         <Image style={styles.mainImage} source={images.cod} />
         <Text numberOfLines={3} style={styles.title}>
           Call of Duty: Modern Warfare III brings intense action and strategic
-          gameplay to new heights
+          gameplay to new heights.
         </Text>
         <RowView marginTop={sizes.spacing.sm} justifyContent="space-between">
           <RowView width="auto">
@@ -87,7 +87,7 @@ const Feed = () => {
               <Text style={styles.sourceTime}>Youtube · 5h</Text>
             </ColumnView>
           </RowView>
-          <RowView width="auto" gap={sizes.spacing.sm}>
+          <RowView width="auto" gap={sizes.spacing.sm / 2}>
             <CustomIcon icon={'heart'} size={sizes.icon.sm.size} />
             <CustomIcon icon={'share'} size={sizes.icon.sm.size} />
             <CustomIcon icon={'more-vert'} size={sizes.icon.sm.size} />
