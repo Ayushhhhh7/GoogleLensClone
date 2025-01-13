@@ -5,12 +5,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { sizes } from 'Theme';
 import { CustomIcon } from 'Components';
 
-// Screens
-// import Login from '../screens/Login';
-// import HomePage from '../screens/HomePage';
-// import History from '../screens/History';
-// import Notifications from '../screens/Notification';
-// import More from '../screens/More';
 import Login from '../screens/public/Login';
 import HomePage from '../screens/session/Homepage';
 import History from '../screens/session/History/History';
@@ -26,20 +20,23 @@ const BottomTabs = () => {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: '#1f2125',
+          backgroundColor: '#2e3133',
           borderTopWidth: 0,
           height: 60,
+          paddingTop: sizes.padding
         },
-        tabBarActiveTintColor: '#fff',
-        tabBarInactiveTintColor: '#9AA0A6',
+        tabBarShowLabel: false
       }}>
       <Tab.Screen
         name="HomePage"
         component={HomePage}
         options={{
-          tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
-            <CustomIcon icon="home" size={sizes.icon.md.size} iconColor={color} />
+            <CustomIcon 
+              icon="home" 
+              size={sizes.icon.md.size} 
+              iconColor={color} 
+            />
           ),
         }}
       />
@@ -48,7 +45,11 @@ const BottomTabs = () => {
         component={History}
         options={{
           tabBarIcon: ({ color }) => (
-            <CustomIcon icon="history" size={sizes.icon.md.size} iconColor={color} />
+            <CustomIcon 
+              icon="history" 
+              size={sizes.icon.md.size} 
+              iconColor={color} 
+            />
           ),
         }}
       />
@@ -57,7 +58,11 @@ const BottomTabs = () => {
         component={Notifications}
         options={{
           tabBarIcon: ({ color }) => (
-            <CustomIcon icon="notifications" size={sizes.icon.md.size} iconColor={color} />
+            <CustomIcon 
+              icon="notifications" 
+              size={sizes.icon.md.size} 
+              iconColor={color} 
+            />
           ),
         }}
       />
@@ -66,7 +71,11 @@ const BottomTabs = () => {
         component={More}
         options={{
           tabBarIcon: ({ color }) => (
-            <CustomIcon icon="more" size={sizes.icon.md.size} iconColor={color} />
+            <CustomIcon 
+              icon="more" 
+              size={sizes.icon.md.size} 
+              iconColor={color} 
+            />
           ),
         }}
       />

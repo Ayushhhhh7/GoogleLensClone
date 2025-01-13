@@ -53,6 +53,7 @@ const CustomIcon = ({
   return (
     <Pressable
       disabled={disabled}
+      pointerEvents="none"
       style={{
         alignItems: 'center',
         justifyContent: 'center',
