@@ -72,14 +72,7 @@ export default {
         fontSize: 18,
         height: 56
       }
-    },
-  
-    radio: {
-      size: 24,
-      borderRadius: 12,
-      borderWidth: 1.5
-    },
-  
+    },  
     fontSize: {
       xs: 12,
       sm: 14,

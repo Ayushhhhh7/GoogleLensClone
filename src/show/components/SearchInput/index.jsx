@@ -34,7 +34,7 @@ const SearchInput = () => {
         />
 
         <RowView width="auto" gap={sizes.padding * 2}>
-          <CustomIcon icon="mic" size={sizes.icon['lg'].size} />
+          <CustomIcon onPress={()=>console.log("Mic")} icon="mic" size={sizes.icon['lg'].size} />
           <CustomIcon icon="add-photo" size={sizes.icon['lg'].size} />
         </RowView>
       </RowView>

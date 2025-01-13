@@ -5,12 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {sizes} from 'Theme';
 import {CustomIcon} from 'Components';
-
-import Login from '../screens/public/Login';
-import HomePage from '../screens/session/Homepage';
-import History from '../screens/session/History/History';
-import Notifications from '../screens/session/Notifications';
-import More from '../screens/session/More';
+import {Login, HomePage, History, Notifications, More} from 'Screens';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -45,7 +40,7 @@ const activeIconStyle = {
   justifyContent: 'center',
   alignItems: 'center',
   paddingLeft: sizes.padding * 1.5,
-  paddingTop: sizes.padding/2
+  paddingTop: sizes.padding / 2,
 };
 
 const BottomTabs = () => {
@@ -57,7 +52,7 @@ const BottomTabs = () => {
           backgroundColor: '#2e3133',
           borderTopWidth: 0,
           height: 70,
-          paddingTop: sizes.padding * 4,
+          paddingTop: sizes.padding * 2,
         },
         tabBarShowLabel: false,
         tabBarButton: props => (
@@ -69,11 +64,12 @@ const BottomTabs = () => {
           key={screen.name}
           name={screen.name}
           component={screen.component}
-          options={{
+          options={({navigation}) => ({
             tabBarIcon: ({color, focused}) =>
               focused ? (
                 <View style={activeIconStyle}>
                   <CustomIcon
+                    pointer={true}
                     icon={screen.icon}
                     size={sizes.icon.lg.size}
                     iconColor={'#8ab4f8'}
@@ -82,13 +78,14 @@ const BottomTabs = () => {
               ) : (
                 <View style={{paddingLeft: sizes.padding}}>
                   <CustomIcon
+                    onPress={() => navigation.navigate(screen.name)}
                     icon={screen.icon}
                     size={sizes.icon.md.size}
                     iconColor={color}
                   />
                 </View>
               ),
-          }}
+          })}
         />
       ))}
     </Tab.Navigator>

@@ -6,6 +6,7 @@ const plugins = [
       alias: {
         Components: './src/show/components',
         Containers: './src/show/containers',
+        Screens: './src/show/screens',
         Theme: './src/show/theme'
       },
     },
