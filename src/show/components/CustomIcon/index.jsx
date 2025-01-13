@@ -37,6 +37,7 @@ const CustomIcon = ({
   iconColor = '#FFFFFF',
   onLongPress = () => {},
   onPress = () => {},
+  pointer= false,
   position = null,
   rounded = true,
   size,
@@ -53,7 +54,7 @@ const CustomIcon = ({
   return (
     <Pressable
       disabled={disabled}
-      pointerEvents="none"
+      {...(pointer && {pointerEvents: ' none'})}
       style={{
         alignItems: 'center',
         justifyContent: 'center',

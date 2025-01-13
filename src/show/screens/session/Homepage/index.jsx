@@ -25,23 +25,7 @@ const HomePage = () => {
         <QuickActions />
         <Separator />
         <InfoCards />
-        {/* <Header />
-        <Header />
-        <Header /> */}
-        {/* <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header /> */}
+
       </ScrollView>
     </SafeAreaView>
   );
