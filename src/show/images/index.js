@@ -4,6 +4,7 @@ const images = {
   dp3: require('./dp3.jpeg'),
   car: require('./car.jpg'),
   cod: require('./cod.jpg'),
+  profile: require('./profile.png'),
   tata: require('./tata.jpg'),
 };
 

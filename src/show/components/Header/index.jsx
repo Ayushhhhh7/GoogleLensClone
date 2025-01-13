@@ -1,12 +1,12 @@
-import {View} from 'react-native';
 import React, {useState} from 'react';
-import {Modal, Pressable, Text} from 'react-native';
+import {Image, View, Modal, Pressable, Text} from 'react-native';
 
 import {sizes} from 'Theme';
 import {RowView} from 'Containers';
-import {CustomIcon, Separator} from 'Components';
+import {CustomIcon} from 'Components';
 
 import styles from './styles';
+import images from '../../images';
 
 const Header = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -57,43 +57,9 @@ const ProfileMenu = ({onClose, visible}) => {
       animationType="fade"
       onRequestClose={onClose}>
       <View style={styles.modalOverlay}>
-        <Pressable
-          onPress={onClose}
-          style={styles.modalBackgroundPressable}
-        />
-
-        <View style={styles.modalContainer}>
-          <RowView width="100%">
-            <View style={styles.closeIconContainer}>
-              <CustomIcon
-                onPress={onClose}
-                icon="close"
-                size={sizes.icon['lg'].size}
-              />
-            </View>
-            <Text style={styles.modalTitle}>
-              Google
-            </Text>
-          </RowView>
-
-          <View style={styles.profileInfoContainer}>
-            <Pressable
-              onPress={() => {}}
-              style={styles.profileIcon}>
-              <Text style={styles.profileIconText}>A</Text>
-            </Pressable>
-            <View style={styles.profileDetailContainer}>
-              <Text style={styles.profileName}>Ayush</Text>
-              <Text style={styles.profileEmail}>ayushdhingra4500@gmail.com</Text>
-            </View>
-            <CustomIcon size={sizes.icon['lg'].size} icon="drop-down" />
-          </View>
-
-          <View style={styles.manageAccountContainer}>
-            <Text style={styles.manageAccountText}>Manage your Google Account</Text>
-          </View>
-          <View style={styles.separator} />
-        </View>
+        <Pressable onPress={onClose} style={styles.modalPressable}>
+          <Image style={styles.modalImage} source={images.profile} />
+        </Pressable>
       </View>
     </Modal>
   );
