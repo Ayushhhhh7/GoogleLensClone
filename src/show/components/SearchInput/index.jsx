@@ -62,7 +62,11 @@ const SearchInput = props => {
             icon="mic"
             size={sizes.icon['lg'].size}
           />
-          <CustomIcon icon="add-photo" size={sizes.icon['lg'].size} />
+          <CustomIcon
+            onPress={() => navigation.navigate('CameraBoard')}
+            icon="add-photo"
+            size={sizes.icon['lg'].size}
+          />
         </RowView>
       </RowView>
     </View>

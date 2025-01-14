@@ -5,7 +5,15 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {sizes} from 'Theme';
 import {CustomIcon} from 'Components';
-import {Login, HomePage, History, Notifications, More,Search} from 'Screens';
+import {
+  CameraBoard,
+  Login,
+  HomePage,
+  History,
+  Notifications,
+  More,
+  Search,
+} from 'Screens';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -92,13 +100,19 @@ const activeIconStyle = {
   paddingTop: sizes.padding / 2,
 };
 
-
 const Navigator = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="MainApp" component={BottomTabs} />
       <Stack.Screen name="Search" component={Search} />
+      <Stack.Screen
+        name="CameraBoard"
+        component={CameraBoard}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };

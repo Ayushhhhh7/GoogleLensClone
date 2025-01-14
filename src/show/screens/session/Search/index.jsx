@@ -1,26 +1,39 @@
-import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
   FlatList,
   Text,
   View,
   ActivityIndicator,
+  Keyboard,
 } from 'react-native';
+import React, {useState, useEffect} from 'react';
 
 import {SearchInput, CustomIcon} from 'Components';
 import {ColumnView, RowView} from 'Containers';
+
 import {sizes} from 'Theme';
+
 import styles from './styles';
+
+const RECENT_SEARCHES = [
+  'shoppin login',
+  'messi vs ronaldo',
+  'best mobile framework 2024',
+  'red blue vs blue pill',
+  'how to become batman',
+];
 
 const Search = ({navigation}) => {
   const [query, setQuery] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const [displayData, setDisplayData] = useState(RECENT_SEARCHES);
+
   useEffect(() => {
     const fetchSuggestions = async () => {
       if (query.trim().length < 1) {
-        setSuggestions([]);
+        setDisplayData(RECENT_SEARCHES);
         return;
       }
 
@@ -36,9 +49,10 @@ const Search = ({navigation}) => {
         );
         const data = await response.json();
         setSuggestions(data);
+        setDisplayData(data[1] || []);
       } catch (error) {
         console.error('Error fetching suggestions:', error);
-        setSuggestions([]);
+        setDisplayData([]);
       } finally {
         setLoading(false);
       }
@@ -75,7 +89,12 @@ const Search = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <SearchInput
         leftIcon={'back'}
-        leftIconOnPress={() => navigation.goBack()}
+        leftIconOnPress={() => {
+          Keyboard.dismiss();
+          setTimeout(() => {
+            navigation.goBack();
+          }, 300);
+        }}
         value={query}
         onChangeText={setQuery}
       />
@@ -95,7 +114,7 @@ const Search = ({navigation}) => {
           </RowView>
         )}
         <FlatList
-          data={suggestions[1]}
+          data={displayData}
           renderItem={renderSuggestion}
           keyExtractor={(item, index) => index.toString()}
         />

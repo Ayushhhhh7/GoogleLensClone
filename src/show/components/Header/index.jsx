@@ -15,7 +15,8 @@ const Header = () => {
     <>
       <RowView
         justifyContent="space-between"
-        paddingHorizontal={sizes.padding * 5}>
+        paddingHorizontal={sizes.padding * 5}
+        marginTop={sizes.margin * 2}>
         <CustomIcon icon="flask" size={sizes.icon['lg'].size} />
 
         <RowView
