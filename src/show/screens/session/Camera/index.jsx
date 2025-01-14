@@ -9,12 +9,15 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
+
+import Animated, {FadeIn, FadeInUp} from 'react-native-reanimated';
 import {
   Camera,
   useCameraDevice,
   useCameraPermission,
 } from 'react-native-vision-camera';
-import FastImage from 'react-native-fast-image'
+
+import FastImage from 'react-native-fast-image';
 import {launchImageLibrary} from 'react-native-image-picker';
 import BottomSheet, {BottomSheetView} from '@gorhom/bottom-sheet';
 
@@ -110,16 +113,18 @@ const CameraBoard = ({navigation}) => {
             <CustomIcon size={sizes.icon['md'].size} icon="more-vert" />
           </View>
 
-          <FastImage
-            style={{
-              height: 450,
-              width: 300,
-              alignSelf: 'center',
-              marginTop: sizes.margin * 6,
-              borderRadius: 20,
-            }}
-            source={{uri: photoPath}}
-          />
+          <Animated.View entering={FadeIn.duration(2500)}>
+            <FastImage
+              style={{
+                height: 450,
+                width: 300,
+                alignSelf: 'center',
+                marginTop: sizes.margin * 6,
+                borderRadius: 20,
+              }}
+              source={{uri: photoPath}}
+            />
+          </Animated.View>
           <BottomSheet
             ref={bottomSheetRef}
             index={0}
