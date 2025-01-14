@@ -7,6 +7,12 @@ import {
   Keyboard,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
+import Animated, {
+  useAnimatedStyle,
+  withSpring,
+  useSharedValue,
+  withTiming
+} from 'react-native-reanimated';
 
 import {SearchInput, CustomIcon} from 'Components';
 import {ColumnView, RowView} from 'Containers';
@@ -29,6 +35,20 @@ const Search = ({navigation}) => {
   const [loading, setLoading] = useState(false);
 
   const [displayData, setDisplayData] = useState(RECENT_SEARCHES);
+
+  const translateY = useSharedValue(200);
+
+  useEffect(() => {
+    translateY.value = withTiming(0, {
+      duration: 400,
+    });
+  }, []);
+
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{translateY: translateY.value}],
+    };
+  });
 
   useEffect(() => {
     const fetchSuggestions = async () => {
@@ -87,17 +107,19 @@ const Search = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <SearchInput
-        leftIcon={'back'}
-        leftIconOnPress={() => {
-          Keyboard.dismiss();
-          setTimeout(() => {
-            navigation.goBack();
-          }, 300);
-        }}
-        value={query}
-        onChangeText={setQuery}
-      />
+      <Animated.View style={animatedStyle}>
+        <SearchInput
+          leftIcon={'back'}
+          leftIconOnPress={() => {
+            Keyboard.dismiss();
+            setTimeout(() => {
+              navigation.goBack();
+            }, 300);
+          }}
+          value={query}
+          onChangeText={setQuery}
+        />
+      </Animated.View>
       <ColumnView
         flex={1}
         alignItems="flex-start"

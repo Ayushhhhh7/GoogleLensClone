@@ -62,10 +62,6 @@ const CameraBoard = ({navigation}) => {
     setPhotoPath(filePath);
   };
 
-  const handleSheetChanges = useCallback(index => {
-    console.log('handleSheetChanges', index);
-  }, []);
-
   const snapPoints = useMemo(() => ['25%', '100%'], []);
 
   if (!hasPermission) {
@@ -127,7 +123,6 @@ const CameraBoard = ({navigation}) => {
             ref={bottomSheetRef}
             index={0}
             snapPoints={snapPoints}
-            onChange={handleSheetChanges}
             enablePanDownToClose={false}
             backgroundStyle={{backgroundColor: '#1f2021'}}>
             <BottomSheetView style={styles.contentContainer}>
