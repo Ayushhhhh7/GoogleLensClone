@@ -60,11 +60,16 @@ const ProfileMenu = ({onClose, visible}) => {
       onRequestClose={onClose}>
       <View style={styles.modalOverlay}>
         <Pressable onPress={onClose} style={styles.modalPressable}>
-          <FastImage style={styles.modalImage} source={images.profile} />
+          <FastImage 
+            style={styles.modalImage} 
+            source={images.profile}
+            resizeMode={FastImage.resizeMode.contain}
+          />
         </Pressable>
       </View>
     </Modal>
   );
 };
+
 
 export default Header;
