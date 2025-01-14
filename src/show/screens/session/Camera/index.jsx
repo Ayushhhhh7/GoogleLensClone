@@ -14,6 +14,7 @@ import {
   useCameraDevice,
   useCameraPermission,
 } from 'react-native-vision-camera';
+import FastImage from 'react-native-fast-image'
 import {launchImageLibrary} from 'react-native-image-picker';
 import BottomSheet, {BottomSheetView} from '@gorhom/bottom-sheet';
 
@@ -109,7 +110,7 @@ const CameraBoard = ({navigation}) => {
             <CustomIcon size={sizes.icon['md'].size} icon="more-vert" />
           </View>
 
-          <Image
+          <FastImage
             style={{
               height: 450,
               width: 300,
@@ -138,7 +139,7 @@ const CameraBoard = ({navigation}) => {
                   marginTop: 18,
                 }}>
                 <CustomIcon size={sizes.icon['md'].size} icon="google-logo" />
-                <Image
+                <FastImage
                   style={{
                     height: 30,
                     width: 30,
@@ -213,11 +214,11 @@ const CameraBoard = ({navigation}) => {
                 justifyContent={'space-around'}
                 alignItems="flex-start"
                 marginTop={sizes.margin * 4}>
-                <Image
+                <FastImage
                   style={{height: 200, width: 150, borderRadius: 10}}
                   source={images.m1}
                 />
-                <Image
+                <FastImage
                   style={{height: 200, width: 150, borderRadius: 10}}
                   source={images.m2}
                 />
@@ -227,11 +228,11 @@ const CameraBoard = ({navigation}) => {
                 justifyContent={'space-around'}
                 alignItems="flex-start"
                 marginTop={sizes.margin * 6}>
-                <Image
+                <FastImage
                   style={{height: 200, width: 150, borderRadius: 10}}
                   source={images.m3}
                 />
-                <Image
+                <FastImage
                   style={{height: 200, width: 150, borderRadius: 10}}
                   source={images.m4}
                 />
@@ -241,11 +242,11 @@ const CameraBoard = ({navigation}) => {
                 justifyContent={'space-around'}
                 alignItems="flex-start"
                 marginTop={sizes.margin * 6}>
-                <Image
+                <FastImage
                   style={{height: 200, width: 150, borderRadius: 10}}
                   source={images.m5}
                 />
-                <Image
+                <FastImage
                   style={{height: 200, width: 150, borderRadius: 10}}
                   source={images.m1}
                 />

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import FastImage from 'react-native-fast-image'
 import {Image, View, Modal, Pressable, Text} from 'react-native';
 
 import {sizes} from 'Theme';
@@ -59,7 +60,7 @@ const ProfileMenu = ({onClose, visible}) => {
       onRequestClose={onClose}>
       <View style={styles.modalOverlay}>
         <Pressable onPress={onClose} style={styles.modalPressable}>
-          <Image style={styles.modalImage} source={images.profile} />
+          <FastImage style={styles.modalImage} source={images.profile} />
         </Pressable>
       </View>
     </Modal>
