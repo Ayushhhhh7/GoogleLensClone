@@ -8,7 +8,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const History = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>History Screen</Text>
+      <Text style={styles.text}>History</Text>
     </SafeAreaView>
   );
 };

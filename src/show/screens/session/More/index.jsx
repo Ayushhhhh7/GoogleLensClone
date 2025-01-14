@@ -7,7 +7,7 @@ import {sizes} from 'Theme';
 const More = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>More Screen</Text>
+      <Text style={styles.text}>More</Text>
     </SafeAreaView>
   );
 };

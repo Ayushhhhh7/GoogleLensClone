@@ -7,7 +7,7 @@ import { sizes } from 'Theme';
 const Notifications = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>Notification Screen</Text>
+      <Text style={styles.text}>Notification</Text>
     </SafeAreaView>
   );
 };

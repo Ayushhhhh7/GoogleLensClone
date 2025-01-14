@@ -8,6 +8,7 @@ import Share from './share';
 import Heart from './heart';
 import Waves from './waves';
 import Flask from './flask';
+import Focus from './focus';
 import Search from './search';
 import School from './school';
 import History from './history';
@@ -28,6 +29,7 @@ export {
   Close,
   DropDown,
   Flask,
+  Focus,
   GeminiLogo,
   GoogleLogo,
   Heart,
