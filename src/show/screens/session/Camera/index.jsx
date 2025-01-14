@@ -19,7 +19,7 @@ import BottomSheet, {BottomSheetView} from '@gorhom/bottom-sheet';
 
 import {sizes} from 'Theme';
 import {CustomIcon} from 'Components';
-import {ColumnView} from 'Containers';
+import {ColumnView, RowView} from 'Containers';
 
 import styles from './styles';
 import images from '../../../images';
@@ -66,7 +66,7 @@ const CameraBoard = ({navigation}) => {
     console.log('handleSheetChanges', index);
   }, []);
 
-  const snapPoints = useMemo(() => ['25%', '100%'], []);
+  const snapPoints = useMemo(() => ['35%', '100%'], []);
 
   if (!hasPermission) {
     return (
@@ -140,7 +140,7 @@ const CameraBoard = ({navigation}) => {
                   paddingVertical: sizes.padding,
                   backgroundColor: '#2c2e30',
                   borderRadius: 20,
-                  marginTop: 18
+                  marginTop: 18,
                 }}>
                 <CustomIcon size={sizes.icon['md'].size} icon="google-logo" />
                 <Image
@@ -166,7 +166,12 @@ const CameraBoard = ({navigation}) => {
 
               </View> */}
               <ScrollView
-                style={{width: '95%', marginTop: sizes.margin * 4}}
+                style={{
+                  maxHeight: 30,
+                  flexDirection: 'row',
+                  width: '95%',
+                  marginTop: sizes.margin * 4,
+                }}
                 horizontal={true}>
                 <Text
                   style={{
@@ -176,7 +181,7 @@ const CameraBoard = ({navigation}) => {
                     textDecorationLine: 'underline',
                     marginRight: sizes.margin * 5,
                   }}>
-                  All{' '}
+                  All
                 </Text>
                 <Text
                   style={{
@@ -184,7 +189,7 @@ const CameraBoard = ({navigation}) => {
                     color: '#cccaca',
                     marginRight: sizes.margin * 5,
                   }}>
-                  Products{' '}
+                  Products
                 </Text>
                 <Text
                   style={{
@@ -192,7 +197,7 @@ const CameraBoard = ({navigation}) => {
                     color: '#cccaca',
                     marginRight: sizes.margin * 5,
                   }}>
-                  Homework{' '}
+                  Homework
                 </Text>
                 <Text
                   style={{
@@ -200,7 +205,7 @@ const CameraBoard = ({navigation}) => {
                     color: '#cccaca',
                     marginRight: sizes.margin * 5,
                   }}>
-                  Visual matchwes{' '}
+                  Visual matches
                 </Text>
                 <Text
                   style={{
@@ -208,9 +213,51 @@ const CameraBoard = ({navigation}) => {
                     color: '#cccaca',
                     marginRight: sizes.margin * 5,
                   }}>
-                  About this image{' '}
+                  About this image
                 </Text>
               </ScrollView>
+              <RowView
+                width="100%"
+                justifyContent={'space-around'}
+                alignItems="flex-start"
+                marginTop={sizes.margin * 4}>
+                <Image
+                  style={{height: 200, width: 150, borderRadius: 10}}
+                  source={images.m1}
+                />
+                <Image
+                  style={{height: 200, width: 150, borderRadius: 10}}
+                  source={images.m2}
+                />
+              </RowView>
+              <RowView
+                width="100%"
+                justifyContent={'space-around'}
+                alignItems="flex-start"
+                marginTop={sizes.margin * 6}>
+                <Image
+                  style={{height: 200, width: 150, borderRadius: 10}}
+                  source={images.m3}
+                />
+                <Image
+                  style={{height: 200, width: 150, borderRadius: 10}}
+                  source={images.m4}
+                />
+              </RowView>
+              <RowView
+                width="100%"
+                justifyContent={'space-around'}
+                alignItems="flex-start"
+                marginTop={sizes.margin * 6}>
+                <Image
+                  style={{height: 200, width: 150, borderRadius: 10}}
+                  source={images.m5}
+                />
+                <Image
+                  style={{height: 200, width: 150, borderRadius: 10}}
+                  source={images.m1}
+                />
+              </RowView>
             </BottomSheetView>
           </BottomSheet>
         </View>
