@@ -66,7 +66,7 @@ const CameraBoard = ({navigation}) => {
     console.log('handleSheetChanges', index);
   }, []);
 
-  const snapPoints = useMemo(() => ['35%', '100%'], []);
+  const snapPoints = useMemo(() => ['25%', '100%'], []);
 
   if (!hasPermission) {
     return (
@@ -162,9 +162,6 @@ const CameraBoard = ({navigation}) => {
                   Add to Search
                 </Text>
               </View>
-              {/* <View style={{flexDirection: 'row'}}>
-
-              </View> */}
               <ScrollView
                 style={{
                   maxHeight: 30,
