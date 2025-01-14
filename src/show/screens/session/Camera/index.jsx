@@ -15,13 +15,13 @@ import {
   useCameraPermission,
 } from 'react-native-vision-camera';
 
+import {sizes} from 'Theme';
 import {CustomIcon} from 'Components';
 import {ColumnView, RowView} from 'Containers';
 
+import styles from './styles';
 import images from '../../../images';
 import {Focus} from '../../../components/CustomIcon/icons';
-
-import {sizes} from 'Theme';
 
 const CameraBoard = ({navigation}) => {
   const {hasPermission, requestPermission} = useCameraPermission();
@@ -70,178 +70,88 @@ const CameraBoard = ({navigation}) => {
   }
 
   return (
-    <View flex={1} backgroundColor="#1f2125">
+    <View style={styles.mainContainer}>
       <Camera
-        style={[StyleSheet.absoluteFill, {bottom: 90}]}
+        style={[StyleSheet.absoluteFill, styles.camera]}
         device={device}
         isActive={true}
       />
 
-      <View
-        alignItems="center"
-        justifyContent="flex-end"
-        flex={1}
-        backgroundColor="transparent">
-        <View style={{position: 'absolute', top: 50}}>
+      <View style={styles.overlay}>
+        <View style={styles.focusContainer}>
           <Focus />
         </View>
 
-        {/* 1st Row  */}
-        <View
-          style={{
-            alignSelf: 'center',
-            position: 'absolute',
-            top: 80,
-            width: '90%',
-            // backgroundColor: 'red',
-            justifyContent: 'space-around',
-            alignItems: 'center',
-            flexDirection: 'row',
-          }}>
+        <View style={styles.headerRow}>
           <CustomIcon
             onPress={() => navigation.goBack()}
             size={sizes.icon['lg'].size}
             icon="back"
           />
           <CustomIcon
-            // onPress={() => navigation.goBack()}
             size={sizes.icon['md'].size}
             icon="flash-off"
           />
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: sizes.fontSize.lg,
-              fontWeight: '600',
-              marginBottom: sizes.margin*2
-            }}>
-            Google Lens
-          </Text>
+          <Text style={styles.titleText}>Google Lens</Text>
           <CustomIcon
-            // onPress={() => navigation.goBack()}
             size={sizes.icon['md'].size}
             icon="clock"
           />
-
           <CustomIcon
-            // onPress={() => navigation.goBack()}
             size={sizes.icon['md'].size}
             icon="more-vert"
           />
         </View>
 
-        {/* search Icon Row */}
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '80%',
-            marginBottom: sizes.margin * 15,
-          }}>
-          <View
-            style={{
-              position: 'absolute',
-              left: 10,
-            }}>
+        <View style={styles.searchRow}>
+          <View style={styles.galleryContainer}>
             <Image
-              style={{
-                borderRadius: 50,
-                borderWidth: 2,
-                borderColor: '#fff',
-                height: 60,
-                width: 60,
-              }}
+              style={styles.galleryImage}
               source={images.gallery}
             />
           </View>
 
-          <View
-            style={{
-              backgroundColor: '#fff',
-              borderRadius: 50,
-              paddingLeft: sizes.padding * 4,
-              paddingTop: sizes.padding * 4,
-            }}>
-            <View>
-              <CustomIcon
-                onPress={() => console.log('search')}
-                icon="search"
-                iconColor="#333131"
-                size={sizes.icon['lg'].size * 2}
-                containerSize={sizes.icon['lg'].containerSize * 1.5}
-              />
-            </View>
+          <View style={styles.searchIconContainer}>
+            <CustomIcon
+              onPress={() => console.log('search')}
+              icon="search"
+              iconColor="#333131"
+              size={sizes.icon['lg'].size * 2}
+              containerSize={sizes.icon['lg'].containerSize * 1.5}
+            />
           </View>
         </View>
 
-        {/* LAST ROW TRANSLATE SEARCH   */}
-
-        <View
-          style={{
-            flexDirection: 'row',
-            marginBottom: sizes.margin * 10,
-            gap: 15,
-          }}>
-          <View
-            style={{
-              borderColor: '#4e535c',
-              flexDirection: 'row',
-              alignItems: 'center',
-              paddingHorizontal: sizes.padding * 2,
-              borderWidth: 1,
-              paddingVertical: sizes.padding,
-              borderRadius: 20,
-            }}>
+        <View style={styles.bottomRow}>
+          <View style={styles.translateButton}>
             <CustomIcon
               icon="translate"
               size={sizes.icon['sm'].size}
               containerSize={sizes.icon['sm'].containerSize / 2}
             />
-            <Text style={{color: '#fff', fontSize: 12}}>Translate</Text>
+            <Text style={styles.buttonText}>Translate</Text>
           </View>
 
-          {/* Search  */}
-          <View
-            style={{
-              backgroundColor: '#2c3c54',
-              flexDirection: 'row',
-              alignItems: 'center',
-              paddingLeft: sizes.padding * 2,
-              paddingRight: sizes.padding * 3,
-              paddingVertical: sizes.padding,
-              borderRadius: 20,
-            }}>
+          <View style={styles.searchButton}>
             <CustomIcon
               iconColor={'#7faff7'}
               icon="search"
               size={sizes.icon['sm'].size}
               containerSize={sizes.icon['sm'].containerSize / 2}
             />
-
-            <View style={{marginBottom: sizes.margin}}>
-              <Text style={{color: '#7faff7', fontSize: 12}}>Search</Text>
+            <View style={styles.searchTextContainer}>
+              <Text style={styles.searchButtonText}>Search</Text>
             </View>
           </View>
 
-          {/* HomeWOrk   */}
-          <View
-            style={{
-              borderColor: '#4e535c',
-              flexDirection: 'row',
-              alignItems: 'center',
-              paddingHorizontal: sizes.padding * 2,
-              borderWidth: 1,
-              paddingVertical: sizes.padding,
-              borderRadius: 20,
-            }}>
+          <View style={styles.homeworkButton}>
             <CustomIcon
               icon="school"
               size={sizes.icon['sm'].size}
               containerSize={sizes.icon['sm'].containerSize / 2}
             />
-            <View style={{marginBottom: sizes.margin}}>
-              <Text style={{color: '#fff', fontSize: 12}}>HomeWork</Text>
+            <View style={styles.homeworkTextContainer}>
+              <Text style={styles.buttonText}>HomeWork</Text>
             </View>
           </View>
         </View>
@@ -249,45 +159,5 @@ const CameraBoard = ({navigation}) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#1f2125',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  cornerBrackets: {
-    flex: 1,
-    margin: 40,
-  },
-  text: {
-    color: '#ffffff',
-    fontSize: 16,
-    marginBottom: 12,
-    textAlign: 'center',
-  },
-  messageText: {
-    textAlign: 'center',
-    fontSize: sizes.fontSize.md,
-    color: '#fff',
-  },
-  settingsButton: {
-    marginTop: sizes.margin * 4,
-    paddingVertical: sizes.padding * 4,
-    width: '80%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9bb4d9',
-  },
-  iconContainer: {
-    position: 'absolute',
-    left: 10,
-  },
-  settingsButtonText: {
-    fontWeight: '600',
-    fontSize: sizes.fontSize.sm,
-  },
-});
 
 export default CameraBoard;
