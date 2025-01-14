@@ -63,7 +63,7 @@ const QuickActions = () => {
                 },
               ]}
               key={index}
-              entering={FadeInRight.delay(index * 100)}>
+              entering={FadeInRight.delay(index * 200)}>
               <RowView width="auto" marginRight={-sizes.margin * 2}>
                 <CustomIcon
                   icon={action.icon}
