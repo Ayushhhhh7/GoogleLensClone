@@ -26,6 +26,13 @@ export default  styles = StyleSheet.create({
       position: 'absolute',
       top: 50,
     },
+    headerRowPicClicked: {
+      alignSelf: 'center',
+      width: '90%',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      flexDirection: 'row',
+    },
     headerRow: {
       alignSelf: 'center',
       position: 'absolute',

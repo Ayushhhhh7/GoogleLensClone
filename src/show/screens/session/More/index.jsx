@@ -7,7 +7,6 @@ import {sizes} from 'Theme';
 const More = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>More</Text>
     </SafeAreaView>
   );
 };
@@ -17,11 +16,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#1f2125',
-  },
-  text: {
-    color: '#FFFFFF',
-    fontSize: sizes.fontSize.lg,
+    backgroundColor: '#2e2a2b',
   },
 });
 
