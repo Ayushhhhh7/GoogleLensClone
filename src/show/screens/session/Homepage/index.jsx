@@ -18,7 +18,6 @@ const HomePage = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView scrollEventThrottle={16}>
         <Header />
-
         <RowView paddingVertical={sizes.padding * 4}>
           <Text style={styles.googleTitle}>Google</Text>
         </RowView>
