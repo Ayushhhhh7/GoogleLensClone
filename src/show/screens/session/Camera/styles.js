@@ -3,9 +3,13 @@ import { StyleSheet } from "react-native";
 import {sizes} from 'Theme'
 
 export default  styles = StyleSheet.create({
+  contentContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
     mainContainer: {
       flex: 1,
-      backgroundColor: '#1f2125',
+      backgroundColor: '#191a1c',
     },
     camera: {
       bottom: 90,
