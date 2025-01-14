@@ -50,7 +50,6 @@ const CameraBoard = ({navigation}) => {
 
   const clickPicture = async () => {
     const photo = await camera.current.takePhoto();
-    // console.log('Photo', photo);
     const {path} = photo;
     console.log('Path', path);
 
