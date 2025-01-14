@@ -23,7 +23,7 @@ import {Focus} from '../../../components/CustomIcon/icons';
 
 import {sizes} from 'Theme';
 
-const CameraBoard = () => {
+const CameraBoard = ({navigation}) => {
   const {hasPermission, requestPermission} = useCameraPermission();
   const device = useCameraDevice('back');
 
@@ -79,20 +79,57 @@ const CameraBoard = () => {
 
       <View
         alignItems="center"
-        justifyContent="space-between"
+        justifyContent="flex-end"
         flex={1}
         backgroundColor="transparent">
         <View style={{position: 'absolute', top: 50}}>
           <Focus />
         </View>
+
         {/* 1st Row  */}
         <View
           style={{
-            flex: 1,
-            justifyContent: 'center',
+            alignSelf: 'center',
+            position: 'absolute',
+            top: 80,
+            width: '90%',
+            // backgroundColor: 'red',
+            justifyContent: 'space-around',
             alignItems: 'center',
             flexDirection: 'row',
-          }}></View>
+          }}>
+          <CustomIcon
+            onPress={() => navigation.goBack()}
+            size={sizes.icon['lg'].size}
+            icon="back"
+          />
+          <CustomIcon
+            // onPress={() => navigation.goBack()}
+            size={sizes.icon['md'].size}
+            icon="flash-off"
+          />
+          <Text
+            style={{
+              color: '#fff',
+              fontSize: sizes.fontSize.lg,
+              fontWeight: '600',
+              marginBottom: sizes.margin*2
+            }}>
+            Google Lens
+          </Text>
+          <CustomIcon
+            // onPress={() => navigation.goBack()}
+            size={sizes.icon['md'].size}
+            icon="clock"
+          />
+
+          <CustomIcon
+            // onPress={() => navigation.goBack()}
+            size={sizes.icon['md'].size}
+            icon="more-vert"
+          />
+        </View>
+
         {/* search Icon Row */}
         <View
           style={{
@@ -107,26 +144,34 @@ const CameraBoard = () => {
               position: 'absolute',
               left: 10,
             }}>
-            <Image style={{borderRadius:50,borderWidth:2,borderColor:'#fff',height: 60, width: 60}} source={images.gallery} />
+            <Image
+              style={{
+                borderRadius: 50,
+                borderWidth: 2,
+                borderColor: '#fff',
+                height: 60,
+                width: 60,
+              }}
+              source={images.gallery}
+            />
           </View>
 
           <View
             style={{
               backgroundColor: '#fff',
               borderRadius: 50,
-              paddingLeft: sizes.padding*4,
-              paddingTop: sizes.padding*4,
+              paddingLeft: sizes.padding * 4,
+              paddingTop: sizes.padding * 4,
             }}>
-                <View >
-                <CustomIcon
-              onPress={() => console.log('search')}
-              icon="search"
-              iconColor="#333131"
-              size={sizes.icon['lg'].size*2}
-              containerSize={sizes.icon['lg'].containerSize*1.5}
-            />
-                </View>
-    
+            <View>
+              <CustomIcon
+                onPress={() => console.log('search')}
+                icon="search"
+                iconColor="#333131"
+                size={sizes.icon['lg'].size * 2}
+                containerSize={sizes.icon['lg'].containerSize * 1.5}
+              />
+            </View>
           </View>
         </View>
 
