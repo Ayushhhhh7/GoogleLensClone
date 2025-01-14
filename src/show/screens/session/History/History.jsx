@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet} from 'react-native';
 
-import { sizes } from 'Theme';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 

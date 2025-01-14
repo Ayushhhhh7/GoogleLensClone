@@ -13,6 +13,8 @@ import {
   useCameraDevice,
   useCameraPermission,
 } from 'react-native-vision-camera';
+import {launchImageLibrary} from 'react-native-image-picker'
+
 
 import {sizes} from 'Theme';
 import {CustomIcon} from 'Components';
@@ -54,6 +56,13 @@ const CameraBoard = ({navigation}) => {
 
     setPhotoPath(path);
   };
+
+  const handleGallery=async()=>{
+    const result = await launchImageLibrary();
+    const filePath=result?.assets[0]?.uri
+    setPhotoPath(filePath)
+    
+  }
 
   if (!hasPermission) {
     return (
@@ -126,13 +135,12 @@ const CameraBoard = ({navigation}) => {
             </View>
 
             <View style={styles.searchRow}>
-              <View style={styles.galleryContainer}>
+              <Pressable onPress={handleGallery} style={styles.galleryContainer}>
                 <Image style={styles.galleryImage} source={images.gallery} />
-              </View>
+              </Pressable>
 
               <View style={styles.searchIconContainer}>
                 <CustomIcon
-                  // onPress={() => console.log('search')}
                   onPress={clickPicture}
                   icon="search"
                   iconColor="#333131"
