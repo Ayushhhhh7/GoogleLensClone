@@ -164,6 +164,7 @@ const CameraBoard = ({navigation}) => {
                 </Text>
               </View>
               <ScrollView
+              showsHorizontalScrollIndicator={false}
                 style={{
                   maxHeight: 30,
                   flexDirection: 'row',

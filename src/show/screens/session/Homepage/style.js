@@ -1,7 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {sizes} from 'Theme';
 
-// Define the constant
 const STICKY_HEADER_HEIGHT = sizes.layout.headerHeight + sizes.padding * 4;
 
 export default StyleSheet.create({
@@ -25,5 +24,4 @@ export default StyleSheet.create({
   },
 });
 
-// Export the constant so it can be used in the component
 export {STICKY_HEADER_HEIGHT};
